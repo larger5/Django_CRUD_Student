@@ -1,0 +1,34 @@
+{% extends "student/base.html" %}
+{% block content %}
+    <div class="layui-container">
+        <blockquote class="layui-elem-quote">
+            <h1>Update Student Page</h1>
+        </blockquote>
+
+        <div class="layui-row">
+        {%for student in data%}
+            <div class="layui-col-md5">
+                <form action="/updateStudent/" method="post" enctype="multipart/form-data"/>
+
+                    <input type="text" name="t_id" id="t_id" placeholder="id" class="layui-input" value="{{ student.id}}" />
+                    <hr class="layui-bg-green">
+
+                    <input type="text" name="tName" id="tName" placeholder="学生名" class="layui-input" value="{{ student.t_name}}"/>
+                    <hr class="layui-bg-green">
+
+                    <input type="text" name="tAge" id="tAge" placeholder="学生年龄" class="layui-input" value="{{ student.t_age }}"/>
+                    <hr class="layui-bg-green">
+
+                    <input type="file" name="tImage" id="tImage"/>
+                    <hr class="layui-bg-green">
+
+                    <img src="{{ student.t_image }}" height="50px">
+                    <hr class="layui-bg-green">
+
+                    <input type="submit" value="修改" class="layui-btn"/>
+                </form>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

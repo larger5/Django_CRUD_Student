@@ -1,0 +1,11 @@
+<uwsgi>
+    <!-- 内部端口，自定义 -->
+    <socket>127.0.0.1:8002</socket>
+    <!-- 项目路径 -->
+    <chdir>/root/temp/StudentCRUD</chdir>
+    <module>StudentCRUD.wsgi</module>
+    <!-- 进程数 -->
+    <processes>4</processes>
+    <!-- 日志文件 -->
+    <daemonize>uwsgi.log</daemonize>
+</uwsgi>
